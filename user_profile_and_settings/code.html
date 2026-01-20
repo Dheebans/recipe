@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile and Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4a7869",
+                        "accent-orange": "#E3A37C",
+                        "background-light": "#fafafa",
+                        "background-dark": "#1c1e22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#131515] dark:text-gray-100">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+<div class="text-[#131515] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-[#131515] dark:text-white text-lg font-extrabold leading-tight tracking-[-0.015em] flex-1 text-center">Profile</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-xl h-10 w-10 bg-transparent text-[#131515] dark:text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="max-w-md mx-auto pb-24">
+<!-- Profile Header Section -->
+<div class="flex p-6 @container">
+<div class="flex w-full flex-col gap-6 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 ring-4 ring-white dark:ring-gray-800 shadow-xl" data-alt="Professional profile headshot of a smiling chef" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAiQk8HwDFWmfX0a7t3JI2KxyLHoV-zMAktz3v4KU54qFhIhImGT8mkEfDs7Vt1Xkyoo9NDoh7ShmT7vP3p-JnkFN3XGHSof9elTzQBEeySyeacBWzOWEBJCrDlp3gz5YxDH_8Mtnxmiua3AqA2xCzVjC2LM7sSFXeApXiqjAIyJFilaAEwHBNXaQyPNVopcB4Joda9ZFGjBvcspQEgxb4DFYJW4tzI3uEJX8P2yEBwVnW4jfEYUSBsyN7rjSypXuH9t5OuSprn_aE-");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full border-2 border-white dark:border-gray-800">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-[#131515] dark:text-white text-2xl font-extrabold leading-tight tracking-tight text-center">Jordan Miller</p>
+<p class="text-[#6f7b77] dark:text-gray-400 text-base font-medium leading-normal text-center">@chef_jordan</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="flex gap-4 px-6 mb-8">
+<div class="flex flex-1 flex-col gap-1 rounded-2xl bg-white dark:bg-gray-800 p-4 items-center text-center custom-shadow border border-gray-50 dark:border-gray-700">
+<p class="text-accent-orange tracking-tight text-2xl font-extrabold leading-tight">124</p>
+<p class="text-[#6f7b77] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Saved Recipes</p>
+</div>
+<div class="flex flex-1 flex-col gap-1 rounded-2xl bg-white dark:bg-gray-800 p-4 items-center text-center custom-shadow border border-gray-50 dark:border-gray-700">
+<p class="text-primary tracking-tight text-2xl font-extrabold leading-tight">8</p>
+<p class="text-[#6f7b77] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Groups Created</p>
+</div>
+</div>
+<!-- Premium CTA Card -->
+<div class="px-6 mb-8">
+<div class="bg-primary rounded-2xl p-5 flex items-center justify-between shadow-lg shadow-primary/20">
+<div class="flex flex-col">
+<h3 class="text-white text-lg font-bold">Go Pro</h3>
+<p class="text-white/80 text-sm">Unlimited recipe extractions &amp; PDF exports</p>
+</div>
+<div class="bg-white/20 p-2 rounded-xl backdrop-blur-sm">
+<span class="material-symbols-outlined text-white">workspace_premium</span>
+</div>
+</div>
+</div>
+<!-- Settings List -->
+<div class="space-y-6">
+<!-- Category: Account -->
+<div>
+<h3 class="text-[#131515] dark:text-white text-sm font-bold uppercase tracking-widest px-6 pb-3 opacity-50">Account</h3>
+<div class="mx-6 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden custom-shadow border border-gray-50 dark:border-gray-700">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-[#131515] dark:text-gray-200 text-[15px] font-semibold flex-1">Account Information</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-xl">chevron_right</span>
+</div>
+<div class="h-px bg-gray-50 dark:bg-gray-700 mx-4"></div>
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-[#131515] dark:text-gray-200 text-[15px] font-semibold flex-1">Notification Preferences</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Category: App Customization -->
+<div>
+<h3 class="text-[#131515] dark:text-white text-sm font-bold uppercase tracking-widest px-6 pb-3 opacity-50">App Customization</h3>
+<div class="mx-6 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden custom-shadow border border-gray-50 dark:border-gray-700">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-accent-orange flex items-center justify-center rounded-xl bg-accent-orange/10 shrink-0 size-10">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#131515] dark:text-gray-200 text-[15px] font-semibold">Default PDF Style</p>
+<p class="text-xs text-[#6f7b77]">Modern Minimalist</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Category: Social Integration -->
+<div>
+<h3 class="text-[#131515] dark:text-white text-sm font-bold uppercase tracking-widest px-6 pb-3 opacity-50">Linked Accounts</h3>
+<div class="mx-6 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden custom-shadow border border-gray-50 dark:border-gray-700">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 shrink-0 size-10">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">link</span>
+</div>
+<p class="text-[#131515] dark:text-gray-200 text-[15px] font-semibold">Instagram</p>
+</div>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded-lg uppercase tracking-tight">Connected</span>
+</div>
+<div class="h-px bg-gray-50 dark:bg-gray-700 mx-4"></div>
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 shrink-0 size-10">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">smart_display</span>
+</div>
+<p class="text-[#131515] dark:text-gray-200 text-[15px] font-semibold">TikTok / YouTube</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-xl">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Footer & Logout -->
+<div class="px-6 pt-4 space-y-4">
+<button class="w-full flex items-center justify-center gap-2 h-14 rounded-2xl bg-red-50 dark:bg-red-900/10 text-red-500 font-bold text-[15px] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                    Log Out
+                </button>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<p class="text-[11px] font-bold uppercase tracking-[0.2em]">Recipe Extract Pro</p>
+<p class="text-[10px]">v2.4.1 (Build 882)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Floating Style) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[340px] h-16 bg-[#131515]/90 dark:bg-[#2E333D]/95 backdrop-blur-xl rounded-full flex items-center justify-around px-6 shadow-2xl z-[100]">
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">home</span>
+</button>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">search</span>
+</button>
+<button class="bg-primary size-12 rounded-full flex items-center justify-center shadow-lg shadow-primary/40 -mt-8 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-white text-[32px]">add</span>
+</button>
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">book</span>
+</button>
+<button class="text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px] font-fill">person</span>
+</button>
+</div>
+</body></html>

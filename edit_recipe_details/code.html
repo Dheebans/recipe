@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6b8e7f",
+              "background-light": "#f7f8f7",
+              "background-dark": "#232926",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#141514] dark:text-white">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#dfe1e1] dark:border-white/10 px-4 py-3 flex items-center justify-between">
+<button class="text-[#727976] dark:text-gray-400 font-medium text-base">Cancel</button>
+<h1 class="text-lg font-bold tracking-tight">Edit Recipe</h1>
+<button class="bg-primary text-white px-5 py-1.5 rounded-full font-bold text-sm shadow-sm hover:bg-primary/90">Save</button>
+</header>
+<main class="max-w-lg mx-auto pb-20">
+<!-- Cover Image Module -->
+<div class="p-4">
+<div class="relative group h-56 w-full rounded-xl overflow-hidden ios-shadow">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="close up of a gourmet pasta dish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDTPKgykb5rwQVgzLnYSEg2enJUSK5RHu-5TL0_Zo9nY1nTjFw73pSXKV0RqbDy1eZkFvq5JXMUjgtA_O8-sUM3OoMf1vIM5ay4C9auzGqAEQhWHNrOW_70pcn3a1saUluZLq0La48OiQFi5eChk57Zzf9Avss608WKCCDX9Vrc9ows2gjdMDmNwhGETNoGjB_0ZuZt2y-hCO4-YNo5jeyjmNVu850s0bsjCjuPMSIf2vzWjNtM_1-XONCsWp0SDjQw0Ui-oUjs8_s");'></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white/90 dark:bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+<span class="text-sm font-bold">Change Photo</span>
+</button>
+</div>
+<!-- Image Toggle Overlay (Bottom Right) -->
+<div class="absolute bottom-4 right-4">
+<button class="bg-white/90 dark:bg-black/80 p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-primary">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recipe Details Section -->
+<div class="px-4 space-y-4">
+<div class="bg-white dark:bg-white/5 rounded-xl p-4 ios-shadow border border-[#dfe1e1]/50 dark:border-white/5">
+<h3 class="text-[#141514] dark:text-white text-sm font-bold uppercase tracking-wider mb-4 opacity-60">General Info</h3>
+<div class="space-y-4">
+<label class="block">
+<p class="text-sm font-medium mb-1.5 ml-1">Recipe Title</p>
+<input class="w-full rounded-lg border border-[#dfe1e1] dark:border-white/10 bg-transparent p-3 text-base focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="text" value="Garlic Butter Lemon Pasta"/>
+</label>
+<div class="flex gap-4">
+<label class="flex-1">
+<p class="text-sm font-medium mb-1.5 ml-1">Portions</p>
+<div class="relative flex items-center">
+<input class="w-full rounded-lg border border-[#dfe1e1] dark:border-white/10 bg-transparent p-3 text-base focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="number" value="2"/>
+<div class="absolute right-2 flex gap-1">
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">remove</span></button>
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-white/10 rounded"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</label>
+<label class="flex-1">
+<p class="text-sm font-medium mb-1.5 ml-1">Prep Time</p>
+<div class="relative">
+<input class="w-full rounded-lg border border-[#dfe1e1] dark:border-white/10 bg-transparent p-3 text-base focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="text" value="15 min"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-gray-400 text-lg">schedule</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Ingredients Section -->
+<div class="bg-white dark:bg-white/5 rounded-xl p-4 ios-shadow border border-[#dfe1e1]/50 dark:border-white/5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-[#141514] dark:text-white text-sm font-bold uppercase tracking-wider opacity-60">Ingredients</h3>
+<button class="text-primary text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">add_circle</span> ADD ITEM
+                    </button>
+</div>
+<div class="space-y-2">
+<!-- Ingredient Row -->
+<div class="group flex items-center gap-3 bg-background-light dark:bg-white/5 p-2 rounded-lg border border-transparent hover:border-primary/20 transition-all">
+<button class="text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">do_not_disturb_on</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 p-0 text-base" type="text" value="250g Linguine pasta"/>
+<button class="cursor-grab text-primary/40 group-hover:text-primary">
+<span class="material-symbols-outlined">drag_indicator</span>
+</button>
+</div>
+<!-- Ingredient Row -->
+<div class="group flex items-center gap-3 bg-background-light dark:bg-white/5 p-2 rounded-lg border border-transparent hover:border-primary/20 transition-all">
+<button class="text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">do_not_disturb_on</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 p-0 text-base" type="text" value="4 cloves garlic, minced"/>
+<button class="cursor-grab text-primary/40 group-hover:text-primary">
+<span class="material-symbols-outlined">drag_indicator</span>
+</button>
+</div>
+<!-- Ingredient Row -->
+<div class="group flex items-center gap-3 bg-background-light dark:bg-white/5 p-2 rounded-lg border border-transparent hover:border-primary/20 transition-all">
+<button class="text-gray-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">do_not_disturb_on</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 p-0 text-base" type="text" value="50g unsalted butter"/>
+<button class="cursor-grab text-primary/40 group-hover:text-primary">
+<span class="material-symbols-outlined">drag_indicator</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Steps Section -->
+<div class="bg-white dark:bg-white/5 rounded-xl p-4 ios-shadow border border-[#dfe1e1]/50 dark:border-white/5">
+<h3 class="text-[#141514] dark:text-white text-sm font-bold uppercase tracking-wider mb-4 opacity-60">Instructions</h3>
+<div class="space-y-6">
+<!-- Step 1 -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-xs">1</div>
+<textarea class="w-full bg-transparent border-b border-[#dfe1e1] dark:border-white/10 focus:border-primary focus:ring-0 p-0 pb-2 text-base resize-none min-h-[60px]" rows="2">Boil a large pot of salted water and cook the linguine until al dente.</textarea>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-xs">2</div>
+<textarea class="w-full bg-transparent border-b border-[#dfe1e1] dark:border-white/10 focus:border-primary focus:ring-0 p-0 pb-2 text-base resize-none min-h-[60px]" rows="3">In a large skillet, melt the butter over medium heat. Add the minced garlic and sauté until fragrant but not browned (about 1 minute).</textarea>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-xs">3</div>
+<textarea class="w-full bg-transparent border-b border-[#dfe1e1] dark:border-white/10 focus:border-primary focus:ring-0 p-0 pb-2 text-base resize-none min-h-[60px]" rows="2">Toss the cooked pasta with the garlic butter sauce and add a splash of pasta water if needed.</textarea>
+</div>
+</div>
+<button class="mt-6 w-full py-4 border-2 border-dashed border-primary/20 rounded-xl text-primary font-bold flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">add</span>
+                    Add Instruction Step
+                </button>
+</div>
+</div>
+<!-- Extra space for bottom safe area -->
+<div class="h-10"></div>
+</main>
+<!-- Bottom Navigation Bar (Optional Contextual actions) -->
+<div class="fixed bottom-0 inset-x-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-[#dfe1e1] dark:border-white/10 p-4 pb-8 flex justify-around items-center">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="text-[10px] font-bold">Edit</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">visibility</span>
+<span class="text-[10px] font-bold">Preview</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">share</span>
+<span class="text-[10px] font-bold">Share</span>
+</button>
+</div>
+</body></html>

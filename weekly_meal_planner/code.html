@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Meal Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#809f60",
+                        "background-light": "#fafafa",
+                        "background-dark": "#262a22",
+                        "accent-peach": "#F8E7DB",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 8px 30px rgba(0, 0, 0, 0.04)',
+                        'fab': '0 12px 40px rgba(128, 159, 96, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#141513] dark:text-white font-display">
+<!-- Top App Bar -->
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-4 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm border border-gray-100 dark:border-zinc-700">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">Weekly Meal Planner</h1>
+<div class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm border border-gray-100 dark:border-zinc-700">
+<span class="material-symbols-outlined text-xl">calendar_month</span>
+</div>
+</div>
+<!-- Horizontal Date Picker -->
+<div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-primary text-white shadow-lg shadow-primary/20">
+<span class="text-[10px] uppercase font-bold tracking-widest opacity-80">Mon</span>
+<span class="text-lg font-extrabold">12</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700">
+<span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Tue</span>
+<span class="text-lg font-extrabold">13</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700">
+<span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Wed</span>
+<span class="text-lg font-extrabold">14</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700">
+<span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Thu</span>
+<span class="text-lg font-extrabold">15</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700">
+<span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Fri</span>
+<span class="text-lg font-extrabold">16</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700">
+<span class="text-[10px] uppercase font-bold tracking-widest text-gray-400">Sat</span>
+<span class="text-lg font-extrabold">17</span>
+</div>
+</div>
+</nav>
+<main class="p-4 space-y-8 pb-32">
+<!-- Monday Section -->
+<section class="space-y-4">
+<div class="flex items-end justify-between px-1">
+<h2 class="text-2xl font-extrabold tracking-tight">Monday</h2>
+<span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">3 Meals</span>
+</div>
+<div class="space-y-3">
+<!-- Breakfast Card (Empty State) -->
+<div class="relative overflow-hidden bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-soft border border-gray-50 dark:border-zinc-800 group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-14 rounded-lg bg-gray-50 dark:bg-zinc-800 border-2 border-dashed border-gray-200 dark:border-zinc-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 dark:text-zinc-600">add</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Breakfast</h3>
+<p class="text-sm font-medium text-gray-400">Plan something tasty...</p>
+</div>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+<!-- Lunch Card -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-soft border border-gray-50 dark:border-zinc-800">
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest">Lunch</h3>
+<span class="material-symbols-outlined text-gray-300 text-lg">drag_handle</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-xl bg-center bg-cover shadow-sm" data-alt="Close up of delicious avocado toast with seeds" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxTR145eG8NFd-k3eul_JlVjM8slhLE3E4QQclrrlQaig2HP6Wnab5Zk_59OcCLSMbfGcyH8XePTcucM-VggJ1TialgZ4VNNpnQ1pWptDjrgqt8pK-xDbOKDbqVXQPcQCovXz73uKvl1jZRSny9z0skUImOPuN6QMF4fPyf7-HG4_Di4KeI7pNR0xmXlDvkaswIcFjwnZCBj0WNI6Qo_vsUHJRlNn-zoLiQuFiDpAWykSJHaegT3iYcAOxBm77L1H95VRe67g5sgUr");'></div>
+<div class="flex-1">
+<h4 class="text-base font-bold leading-tight mb-1">Avocado Toast</h4>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-accent-peach dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    15 mins
+                                </div>
+<div class="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                                    240 kcal
+                                </div>
+</div>
+</div>
+<button class="text-gray-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Dinner Card -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-soft border border-gray-50 dark:border-zinc-800">
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest">Dinner</h3>
+<span class="material-symbols-outlined text-gray-300 text-lg">drag_handle</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-xl bg-center bg-cover shadow-sm" data-alt="Pan-seared salmon with herbs and lemon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW4LUXhJcZcyN8QzAGh_87LJrbk7JG8FkBwBKA1KzFqdCctFNNSWvi51fnpvSaMWlu8wQegigP8Z-eAmTKXTqvkVYn7rfELhZdYope5kfvHu0lIIbQU_4-veevHDIxfvnTdPGhdh_ENKAKwkdgCXq141ryV1T3JLlPNnkv4yMCsjhUmQ2xgt5BhL3yLCuWj4srfM64MPkRqJ4y5STc8eqLcE3DJjjtI3OdGzCkFNawHvBuado3XtO_bOWxyFspqFEgddYNAm67OAsQ");'></div>
+<div class="flex-1">
+<h4 class="text-base font-bold leading-tight mb-1">Lemon Herb Salmon</h4>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-accent-peach dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    25 mins
+                                </div>
+<div class="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                                    480 kcal
+                                </div>
+</div>
+</div>
+<button class="text-gray-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Tuesday Section -->
+<section class="space-y-4">
+<div class="flex items-end justify-between px-1">
+<h2 class="text-2xl font-extrabold tracking-tight opacity-50">Tuesday</h2>
+<span class="text-sm font-medium text-gray-400 bg-gray-100 dark:bg-zinc-800 px-3 py-1 rounded-full">1 Meal</span>
+</div>
+<div class="space-y-3">
+<!-- Breakfast Card -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-soft border border-gray-50 dark:border-zinc-800">
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-[10px] font-bold text-primary uppercase tracking-widest">Breakfast</h3>
+<span class="material-symbols-outlined text-gray-300 text-lg">drag_handle</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-xl bg-center bg-cover shadow-sm" data-alt="Overnight oats jar with berries" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0UPykDrMVeGn6kFAf5pvD6YM0DK1PnvVc1Ignt7q0IG7EsjCjkydimaqz7QyVo57qyzPYS4OTRxibLaVm7wYXvgKO0ArKRaQ2wBU6bIvLlGR5e2V856AFhCQgpLZ4ntpomqFqzHy2sCz6x3h0uTUFWkS8RAZKgWhK9L9_VRilMRQCpZEKgWz6z2CjC4wZD9cHND3XFCPWTUDHI2OaTxLfD4aUDFBd25Xr9an9F5eU_bvfKLR3FUMGJMm4qEadV3QjsTKlvu0WEQW_");'></div>
+<div class="flex-1">
+<h4 class="text-base font-bold leading-tight mb-1">Overnight Berry Oats</h4>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-accent-peach dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 px-2 py-0.5 rounded-md text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    5 mins
+                                </div>
+</div>
+</div>
+<button class="text-gray-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Lunch Placeholder -->
+<div class="relative overflow-hidden bg-white/50 dark:bg-zinc-900/50 rounded-xl p-4 border-2 border-dashed border-gray-100 dark:border-zinc-800 flex items-center justify-between">
+<div class="flex items-center gap-4 opacity-50">
+<div class="size-14 rounded-lg bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400">lunch_dining</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Lunch</h3>
+</div>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-400">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Dinner Placeholder -->
+<div class="relative overflow-hidden bg-white/50 dark:bg-zinc-900/50 rounded-xl p-4 border-2 border-dashed border-gray-100 dark:border-zinc-800 flex items-center justify-between">
+<div class="flex items-center gap-4 opacity-50">
+<div class="size-14 rounded-lg bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400">dinner_dining</span>
+</div>
+<div>
+<h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Dinner</h3>
+</div>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-400">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-8 right-6">
+<button class="bg-primary hover:bg-primary/90 text-white flex items-center gap-3 pl-5 pr-6 py-4 rounded-full shadow-fab transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform">shopping_basket</span>
+<span class="font-bold text-sm tracking-wide">Generate Shopping List</span>
+</button>
+</div>
+<!-- Bottom Navigation (iOS Style) -->
+<nav class="fixed bottom-0 w-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl border-t border-gray-100 dark:border-zinc-800 px-8 py-3 pb-6 flex justify-between items-center z-40">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-2xl">event_note</span>
+<span class="text-[10px] font-bold">Planner</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+<span class="text-[10px] font-bold">Extract</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-2xl">restaurant_menu</span>
+<span class="text-[10px] font-bold">Recipes</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</div>
+</nav>
+</body></html>

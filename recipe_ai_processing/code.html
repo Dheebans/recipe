@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipe AI Processing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00816c",
+                        "background-light": "#fdfcfc",
+                        "background-dark": "#323b43",
+                        "accent-coral": "#ff7051",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        .glass-gradient {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101817] dark:text-white transition-colors duration-300">
+<div class="relative flex h-screen max-w-md mx-auto flex-col overflow-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-[#101817] dark:text-white cursor-pointer p-2 rounded-full hover:bg-black/5">close</span>
+</div>
+<h2 class="text-[#101817] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Crafting your recipe</h2>
+</div>
+<div class="flex-1 overflow-y-auto px-4 pt-4 pb-24 flex flex-col gap-6">
+<!-- Video Preview Card -->
+<div class="p-1 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-sm bg-white dark:bg-zinc-800 overflow-hidden border border-[#dae7e4]/40 dark:border-white/10">
+<div class="relative w-full aspect-[4/3] bg-center bg-no-repeat bg-cover" data-alt="Instagram video of a sizzling skillet pasta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEVixeP4Fnx0qFdXjsZXaVhZoeWAUP39SxuzWaELPQvwdnJjsHr0IQW1EtwH3GKQOWvRsAYVUAaP1e1kxCVpPNAbJIaP16wLh_8lOdI0auPpAFal7HMuytkww6Qp8sKt1JeEviLKjazUPCWYRrbigIvtE0S4l5D4y-6G1vs3aHYKID3ops7Bi4uN6psJkv8K5BaPBOUU2XOhH22Xm84Vuy1c_dKkf00gxMjZI44bS6DJ4VMcgCdbGzoBlL0Ynq7VuinI-slzDJlszs");'>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<div class="bg-white/20 backdrop-blur-md p-3 rounded-full">
+<span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 p-4">
+<p class="text-[#101817] dark:text-white text-base font-bold leading-tight">Authentic Pasta Carbonara</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#5e8d85] text-sm">link</span>
+<p class="text-[#5e8d85] text-sm font-normal">instagram.com/chef_luigi/reel/...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Central AI Status & Progress -->
+<div class="flex flex-col gap-6 p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10">
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<div class="flex flex-col">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-1">AI Processing</span>
+<p class="text-[#101817] dark:text-white text-xl font-bold leading-tight">Extracting ingredients...</p>
+</div>
+<p class="text-primary text-2xl font-black leading-none">65<span class="text-sm font-medium">%</span></p>
+</div>
+<!-- Advanced Progress Bar -->
+<div class="h-4 w-full bg-white dark:bg-zinc-700 rounded-full p-1 overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary via-[#00a68c] to-primary relative overflow-hidden" style="width: 65%;">
+<div class="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.3)_50%,transparent_100%)] w-20 animate-[move_2s_linear_infinite]" style="left: -20px;"></div>
+</div>
+</div>
+<p class="text-[#5e8d85] dark:text-zinc-400 text-sm font-medium">This usually takes about 20 seconds. Sit back while we do the chopping!</p>
+</div>
+<!-- Vertical Timeline -->
+<div class="grid grid-cols-[32px_1fr] gap-x-3">
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-1 pt-1">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="w-[2px] bg-primary/30 h-8 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<p class="text-[#101817] dark:text-white text-base font-semibold leading-normal">Scanning video frames</p>
+<p class="text-primary text-sm font-medium">Completed</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-1">
+<div class="relative">
+<div class="absolute inset-0 animate-ping rounded-full bg-primary/20"></div>
+<span class="material-symbols-outlined text-primary relative">pending</span>
+</div>
+<div class="w-[2px] bg-[#dae7e4] dark:bg-zinc-700 h-8 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<p class="text-[#101817] dark:text-white text-base font-semibold leading-normal">Identifying ingredients</p>
+<p class="text-primary text-sm font-bold animate-pulse">In progress</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[#dae7e4] dark:text-zinc-600">circle</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="text-[#5e8d85] dark:text-zinc-500 text-base font-medium leading-normal">Generating cooking steps</p>
+<p class="text-[#5e8d85] dark:text-zinc-500 text-sm font-normal">Waiting...</p>
+</div>
+</div>
+</div>
+<!-- ActionPanel / Tip -->
+<div class="@container">
+<div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-[#dae7e4] dark:border-zinc-700 bg-white dark:bg-zinc-800 p-5 shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-accent-coral text-xl">lightbulb</span>
+<p class="text-[#101817] dark:text-white text-base font-bold leading-tight">Did you know?</p>
+</div>
+<p class="text-[#5e8d85] dark:text-zinc-400 text-sm font-normal leading-relaxed">
+                            You can save recipes to your <span class="text-primary font-bold">'Weekend Brunch'</span> collection for easy access later.
+                        </p>
+</div>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex items-center gap-2 text-primary group" href="#">
+                        Learn more
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Area -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent pt-8 pb-8 px-4 flex flex-col items-center gap-4">
+<button class="w-full bg-primary py-4 rounded-xl text-white font-bold text-lg shadow-lg shadow-primary/20 opacity-50 cursor-not-allowed">
+                View Structured Recipe
+            </button>
+<button class="text-[#5e8d85] dark:text-zinc-400 font-bold text-sm hover:text-accent-coral transition-colors">
+                Cancel extraction
+            </button>
+</div>
+</div>
+<!-- Custom move animation for the progress bar sheen -->
+<style>
+        @keyframes move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(450px); }
+        }
+    </style>
+</body></html>

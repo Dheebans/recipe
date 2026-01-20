@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4a7869",
+            "accent": "#E87652",
+            "background-light": "#fbfaf9",
+            "background-dark": "#1c1f21",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input[type="checkbox"]:checked + p {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#131515] dark:text-white min-h-screen">
+<!-- Top App Bar (iOS Style Large Title Pattern) -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/70">3 Recipes Active</span>
+</div>
+<button class="text-accent text-sm font-bold tracking-tight">Clear All</button>
+</div>
+<h1 class="text-3xl font-extrabold tracking-tight mb-4">Shopping List</h1>
+</div>
+<main class="pb-32">
+<!-- Recipe Carousel Section -->
+<div class="mb-8">
+<div class="flex overflow-x-auto custom-scrollbar gap-4 px-4 py-2">
+<!-- Recipe Card 1 -->
+<div class="flex-none w-32 group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden ring-2 ring-primary mb-2 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Spicy pasta in a ceramic bowl" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbUY8lKVcfUKLl27sJgV1c83UvrnGBtPSdUsg85L3Ue64xD17UX1CZyLFNT7Q1LbSafWhIjlkvpPsD3jPhmfvJopw84yZdeDMTNcYJ1tTyLWvNaHgFEZer_lOxLxXegEiQvLI3hVZcCgumfY3S4EM7Nwr9koc1othbTmmUxWtydbk9HjGSdE5TIlUmttU2vgwAKBTOIr_3J_reRlAZ4OKMSYE-bbvQNjlrJisVHpztEja3iTXrt8yhwW5Tf0KnrAOCV_6FpKwKr5IO')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute top-2 right-2 bg-primary text-white p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<p class="text-sm font-bold leading-tight truncate">Spicy Pasta</p>
+</div>
+<!-- Recipe Card 2 -->
+<div class="flex-none w-32 group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden ring-2 ring-primary mb-2 shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Slices of garlic bread with parsley" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw6c9vWXhe2igqMkGw3ZOsOtk5g5bKTTU0pgKVzY9eKfoAft4DaZgToZnEXttOKiFr17EbC7Cx2IjDZIetRf-oXQ5CrtozjVnGS95MLZW1WBBEnuHkGAfQdgci4PWCN3TC22zGVOs8cs6GbDa6Nx8EWIyFcoATC1Sf3syJhCY-sQQoUFf9bQP_bCWEsBovY2G3wgBQMXfsgbKfhUD4GeiTlFlsZhAxvHZ2fEyAz1QdpVI1rs_CZpxANkky4x1jW8Uxv76V7ClYlv1H')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute top-2 right-2 bg-primary text-white p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<p class="text-sm font-bold leading-tight truncate">Garlic Bread</p>
+</div>
+<!-- Recipe Card 3 -->
+<div class="flex-none w-32 group opacity-60">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 mb-2">
+<div class="absolute inset-0 bg-cover bg-center grayscale" data-alt="Classic caesar salad with croutons" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhrO995nMImnlhaZj6g_tZeYZwGIbG2lRpPPpUP_uJj0acYrj2LIqi6_lKRdeGRD9MlTVsefwXl0q0GOGmJctObvePc37vSDGa9xV01pyx729lmGlMOkIu5Q-OoaIrvsGRbioD94NlgVdhhjBJgPWCJQ5lzF_Q2HM4O-8M_SAburqiKrnqWsUS5J9YOjZkgKetFGse3a4UPCGhuXRsDiEJr7aRScNjrFHxqXq_Tq5_LUe6b2cAkOPkb_Mph8CM7esRBXPQXCXe0zvC')"></div>
+</div>
+<p class="text-sm font-medium leading-tight truncate">Caesar Salad</p>
+</div>
+</div>
+</div>
+<!-- Categorized Lists -->
+<div class="space-y-6 px-4" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27white%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<!-- Produce Section -->
+<section class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-primary text-xs font-black uppercase tracking-widest">Produce</h3>
+</div>
+<div class="space-y-1">
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Spinach</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">200g</span>
+</label>
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Garlic</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">1 bulb</span>
+</label>
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Roma Tomatoes</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">4</span>
+</label>
+</div>
+</section>
+<!-- Dairy Section -->
+<section class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-primary text-xs font-black uppercase tracking-widest">Dairy</h3>
+</div>
+<div class="space-y-1">
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Heavy Cream</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">250ml</span>
+</label>
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Parmesan Cheese</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">50g</span>
+</label>
+</div>
+</section>
+<!-- Pantry Section -->
+<section class="bg-white dark:bg-zinc-900 rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<h3 class="text-primary text-xs font-black uppercase tracking-widest">Pantry</h3>
+</div>
+<div class="space-y-1">
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Penne Pasta</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">500g</span>
+</label>
+<label class="flex items-center justify-between py-3 border-b border-gray-50 dark:border-gray-800 last:border-0 group">
+<div class="flex items-center gap-3">
+<input class="h-6 w-6 rounded-full border-2 border-primary/30 text-accent focus:ring-accent checked:bg-accent checked:border-accent checked:bg-[image:--checkbox-tick-svg] transition-all cursor-pointer" type="checkbox"/>
+<p class="text-base font-semibold leading-normal transition-opacity">Olive Oil</p>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">Bottle</span>
+</label>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar / Quick Add -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border-t border-gray-100 dark:border-zinc-800 px-4 pt-4 pb-8 z-50">
+<div class="flex items-center gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">add_circle</span>
+<input class="w-full pl-10 pr-4 py-3 bg-gray-100 dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-sm font-medium" placeholder="Quick add item..." type="text"/>
+</div>
+<button class="bg-accent text-white h-12 w-12 rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</body></html>
